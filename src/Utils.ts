@@ -122,6 +122,13 @@ export default class Utils {
     return value.toLowerCase() === 'true' || value.toLowerCase() === 'false'
   }
 
+  public static isValidEmail(email: string): boolean {
+    const emailRegEx: RegExp = new RegExp(
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i
+    );
+    return emailRegEx.test(email);
+  }
+
   public static logOutput(stdout: any): any {
     // what comes in, should be an array
     // if it's not, return as-is
@@ -276,7 +283,8 @@ export default class Utils {
     else {
       relativePathToRemove = webRelativePath.substring(1);
     }
-
+    // change 1
+    // change 2
     // remove last '/' of webRelativePath
     const webPathLastCharPos: number = webRelativePath.length - 1;
 

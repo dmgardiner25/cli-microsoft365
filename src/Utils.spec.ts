@@ -225,6 +225,21 @@ describe('Utils', () => {
     assert(result == false);
   });
 
+  it('isValidEmail returns false if invalid email', () => {
+    const result = Utils.isValidEmail('foo');
+    assert(result == false);
+  });
+
+  it('isValidEmail returns true if valid email', () => {
+    const result = Utils.isValidEmail('firstname.surname@domain.com');
+    assert(result == true);
+  });
+
+  it('isValidEmail returns true if valid .onmicrosoft.com email', () => {
+    const result = Utils.isValidEmail('firstname.surname@domain.onmicrosoft.com');
+    assert(result == true);
+  });
+
   it('doesn\'t fail when restoring stub if the passed object is undefined', () => {
     Utils.restore(undefined);
     assert(true);

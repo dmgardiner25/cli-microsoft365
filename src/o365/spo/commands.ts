@@ -128,6 +128,7 @@ export default {
   PAGE_SECTION_GET: `${prefix} page section get`,
   PAGE_SECTION_LIST: `${prefix} page section list`,
   PAGE_TEXT_ADD: `${prefix} page text add`,
+  PERSONALSITE_ADD: `${prefix} personalsite add`,
   PROPERTYBAG_GET: `${prefix} propertybag get`,
   PROPERTYBAG_LIST: `${prefix} propertybag list`,
   PROPERTYBAG_REMOVE: `${prefix} propertybag remove`,
