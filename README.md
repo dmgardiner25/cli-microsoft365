@@ -104,7 +104,7 @@ npm install -g @pnp/cli-microsoft365
 ```
 
 <details>
-  <summary>Install beta version</summary>
+  <summary>Install beta version  β</summary>
 
   ```
   npm install -g @pnp/cli-microsoft365@next
@@ -112,7 +112,7 @@ npm install -g @pnp/cli-microsoft365
 </details>
 
 <details>
-  <summary>Alternate package managers</summary>
+  <summary>Alternate package managers 🧶</summary>
 
   ### yarn
 
@@ -125,6 +125,31 @@ npm install -g @pnp/cli-microsoft365
   ```
   npx @pnp/cli-microsoft365
   ```
+</details>
+
+<details>
+  <summary>Run CLI for Microsoft 365 in a Docker container 🐳</summary>
+  You can use Docker to run a standalone Linux container with CLI for Microsoft 365 and PowerShell pre-installed and with command completion automatically configured. 
+
+  Run the latest version of CLI for Microsoft 365 in a bash terminal by executing 
+
+  ```
+  docker run --rm -it m365pnp/cli-microsoft365:latest
+  ```
+
+  Run the latest version of CLI for Microsoft 365 in a PowerShell terminal by executing
+
+  ```
+  docker run --rm -it m365pnp/cli-microsoft365:latest pwsh
+  ```
+
+  Run the beta version of CLI for Microsoft 365 in a bash terminal by executing
+
+  ```
+  docker run --rm -it m365pnp/cli-microsoft365:next
+  ```
+
+  See the list of available tags on [Docker Hub](https://hub.docker.com/repository/docker/m365pnp/cli-microsoft365/)
 </details>
 
 ## Usage
