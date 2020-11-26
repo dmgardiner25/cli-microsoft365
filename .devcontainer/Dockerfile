@@ -37,8 +37,6 @@ RUN useradd \
   codespace
 USER codespace
 
-WORKDIR /home/codespace
-
 RUN zsh -c "$(curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" --unattended \
  && git clone https://github.com/denysdovhan/spaceship-prompt.git "$HOME/.oh-my-zsh/custom/themes/spaceship-prompt" --depth=1 \
  && ln -s "$HOME/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/spaceship.zsh-theme" \
@@ -48,4 +46,4 @@ RUN zsh -c "$(curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mast
  && sed -i "11s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"spaceship\"/" ~/.zshrc \
  && sed -i "71s/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/" ~/.zshrc
 
-CMD ["zsh", "-l"]
+CMD ["zsh","-l"]
