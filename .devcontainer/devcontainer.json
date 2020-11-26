@@ -6,7 +6,7 @@
     "vsls-contrib.codetour",
   ],
   "settings": {
-    "terminal.integrated.shell.linux": "/bin/zsh"
+    "terminal.integrated.shell.linux": "zsh"
   },
   "postCreateCommand": "npm i && npm run clean && npm run build && npm link"
 }
