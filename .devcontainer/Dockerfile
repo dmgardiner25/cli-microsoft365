@@ -29,13 +29,6 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip3 install mkdocs-material==3.1.0
 
-RUN useradd \
-  --user-group \
-  --system \
-  --create-home \
-  --no-log-init \
-  codespace
-USER codespace
 
 RUN zsh -c "$(curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" --unattended \
  && git clone https://github.com/denysdovhan/spaceship-prompt.git "$HOME/.oh-my-zsh/custom/themes/spaceship-prompt" --depth=1 \
