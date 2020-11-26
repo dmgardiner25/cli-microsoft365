@@ -2,6 +2,7 @@
   "name": "CLI for Microsoft 365",
   "dockerFile": "Dockerfile",
   "extensions": [
+    "eamodio.gitlens",
     "vsls-contrib.codetour",
   ],
   "settings": {
