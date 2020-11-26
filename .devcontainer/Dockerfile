@@ -11,21 +11,18 @@ LABEL name="CLI for Microsoft 365 Development" \
   Mark Powney <mpowney@icloud.com>, \
   Patrick Lamber <patrick@nubo.eu>"
 
-ENV NPM_CONFIG_PREFIX=/home/cli-microsoft365/.npm-global \
-  PATH=$PATH:/home/cli-microsoft365/.npm-global/bin
+ENV NPM_CONFIG_PREFIX=/home/cli-microsoft365-dev/.npm-global \
+  PATH=$PATH:/home/cli-microsoft365-dev/.npm-global/bin
 
 RUN apt-get update && apt-get install -y \
   git \
   curl \
-  sudo \
-  wget \
   sudo \
   zsh \
   jq \
   vim \
   python3.8 \
   python3-pip \
-  bash-completion \
   && curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - \
   && apt-get install nodejs -y \
   && rm -rf /var/lib/apt/lists/*
@@ -42,7 +39,7 @@ USER cli-microsoft365-dev
 
 WORKDIR /home/cli-microsoft365
 
-RUN sh -c "$(curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" --unattended \
+RUN zsh -c "$(curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" --unattended \
  && git clone https://github.com/denysdovhan/spaceship-prompt.git "$HOME/.oh-my-zsh/custom/themes/spaceship-prompt" --depth=1 \
  && ln -s "$HOME/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/spaceship.zsh-theme" \
  && cp "$HOME/.oh-my-zsh/templates/zshrc.zsh-template" $HOME/.zshrc \
