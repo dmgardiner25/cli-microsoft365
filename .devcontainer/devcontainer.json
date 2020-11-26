@@ -4,9 +4,13 @@
   "extensions": [
     "eamodio.gitlens",
     "vsls-contrib.codetour",
+    "github.vscode-pull-request-github",
+    "ms-vscode.powershell",
+    "ms-vsliveshare.vsliveshare",
+    "visualstudioexptteam.vscodeintellicode"
   ],
   "settings": {
-    "terminal.integrated.shell.linux": "zsh"
+    "terminal.integrated.shell.linux": "/usr/bin/zsh",
   },
   "postCreateCommand": "npm i && npm run clean && npm run build && npm link"
 }
