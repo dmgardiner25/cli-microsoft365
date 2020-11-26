@@ -47,5 +47,3 @@ RUN zsh -c "$(curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mast
  && git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions \
  && sed -i "11s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"spaceship\"/" ~/.zshrc \
  && sed -i "71s/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/" ~/.zshrc
-
-CMD ["zsh", "-l"]
