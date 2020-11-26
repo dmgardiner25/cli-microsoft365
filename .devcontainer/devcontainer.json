@@ -12,6 +12,5 @@
   "settings": {
     "terminal.integrated.shell.linux": "/bin/zsh"
   },
-  "postCreateCommand": "npm i && npm run clean && npm run build && npm link",
-  "postStartCommand": "echo 'Welcome Contributor'!"
+  "postCreateCommand": "npm i && npm run clean && npm run build && npm link"
 }
