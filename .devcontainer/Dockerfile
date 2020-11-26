@@ -11,8 +11,8 @@ LABEL name="CLI for Microsoft 365 Development" \
   Mark Powney <mpowney@icloud.com>, \
   Patrick Lamber <patrick@nubo.eu>"
 
-ENV NPM_CONFIG_PREFIX=/home/cli-microsoft365-dev/.npm-global \
-  PATH=$PATH:/home/cli-microsoft365-dev/.npm-global/bin
+ENV NPM_CONFIG_PREFIX=/home/codespace/.npm-global \
+  PATH=$PATH:/home/codespace/.npm-global/bin
 
 RUN apt-get update && apt-get install -y \
   git \
@@ -34,10 +34,10 @@ RUN useradd \
   --system \
   --create-home \
   --no-log-init \
-  cli-microsoft365-dev
-USER cli-microsoft365-dev
+  codespace
+USER codespace
 
-WORKDIR /home/cli-microsoft365
+WORKDIR /home/codespace
 
 RUN zsh -c "$(curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" --unattended \
  && git clone https://github.com/denysdovhan/spaceship-prompt.git "$HOME/.oh-my-zsh/custom/themes/spaceship-prompt" --depth=1 \
