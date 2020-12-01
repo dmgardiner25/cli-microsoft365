@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/powershell:7.1.0-ubuntu-focal
+FROM python:3.8-slim-buster
 
 LABEL name="CLI for Microsoft 365 Development" \
   description="Manage Microsoft 365 and SharePoint Framework projects on any platform" \
@@ -14,17 +14,21 @@ LABEL name="CLI for Microsoft 365 Development" \
 ENV NPM_CONFIG_PREFIX=/home/cli-microsoft365-dev/.npm-global \
   PATH=$PATH:/home/cli-microsoft365-dev/.npm-global/bin
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
   git \
   curl \
   sudo \
   zsh \
   jq \
   vim \
-  python3.8 \
-  python3-pip \
   && curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - \
   && apt-get install nodejs -y \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN curl https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb -o packages-microsoft-prod.deb \
+  && dpkg -i packages-microsoft-prod.deb \
+  && apt-get update \
+  && apt-get install -y powershell \
   && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install mkdocs-material==3.1.0
