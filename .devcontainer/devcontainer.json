@@ -10,7 +10,7 @@
     "visualstudioexptteam.vscodeintellicode"
   ],
   "settings": {
-    "terminal.integrated.shell.linux": "/bin/zsh"
+    "terminal.integrated.shell.linux": "/bin/bash"
   },
   "postCreateCommand": "npm i && npm run clean && npm run build && npm link"
 }
